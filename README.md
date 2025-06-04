@@ -13,14 +13,14 @@ This project is a face recognition-based attendance system built using Python. I
 
 - Python 3.6 or higher
 - Required libraries (install via pip):
-+ opencv-python (cv2)
-+ torch
-+ numpy
-+ pandas
-+ pillow (PIL)
-+ facenet-pytorch
-+ beepy
-+ fpdf
+  - opencv-python (cv2)
+  - torch
+  - numpy
+  - pandas
+  - pillow (PIL)
+  - facenet-pytorch
+  - beepy
+  - fpdf
 
 
 - A webcam for real-time face detection
@@ -38,9 +38,9 @@ This project is a face recognition-based attendance system built using Python. I
 
 
 - Prepare the Image Directory:
--  Create an image folder in the project directory.
--  Add subfolders for each person in the format NAME_CLASS (e.g., BILL_GATE_DHCNTT).
--  Place .jpg, .jpeg, or .png images of the person in their respective subfolder.
+  - Create an image folder in the project directory.
+  - Add subfolders for each person in the format NAME_CLASS (e.g., BILL_GATE_DHCNTT).
+  - Place .jpg, .jpeg, or .png images of the person in their respective subfolder.
 
 
 - Optional: Place a face_detection.jpg file in the project directory for the welcome screen background.
@@ -54,47 +54,47 @@ Run the Application:
 - GUI Navigation:
 -  Welcome Screen: Displays a background image (face_detection.jpg) and navigation options.
 -  Add New Face:
-+ Enter a name and class.
-+ Click "Capture Face" to use the webcam or "Load Image" to upload an image.
-+ The face is saved in the image/NAME_CLASS folder.
+  + Enter a name and class.
+  + Click "Capture Face" to use the webcam or "Load Image" to upload an image.
+  + The face is saved in the image/NAME_CLASS folder.
 
 
 - Attendance:
-+ Real-time face recognition via webcam.
-+ Recognized faces are logged to Attendance.csv with name, class, time, and date.
-+ A beep sound confirms attendance.
+  + Real-time face recognition via webcam.
+  + Recognized faces are logged to Attendance.csv with name, class, time, and date.
+  + A beep sound confirms attendance.
 
 
 - Statistics:
-+ Filter attendance records by class and/or date using dropdown menus.
-+ View results in a table.
-+ Export filtered data to a PDF file.
+  + Filter attendance records by class and/or date using dropdown menus.
+  + View results in a table.
+  + Export filtered data to a PDF file.
 
 
 
 
 - File Menu:
-+ "Empty CSV": Clears the Attendance.csv file and the attendance table.
-+ "Exit": Closes the application.
+ + "Empty CSV": Clears the Attendance.csv file and the attendance table.
+ + "Exit": Closes the application.
 
 
 
 ## How It Works
 
 - Face Recognition:
-+ Uses MTCNN from facenet-pytorch for face detection and InceptionResnetV1 for generating face embeddings.
-+ Known faces are loaded from the image directory, where each subfolder (NAME_CLASS) contains images of a person.
-+ During attendance, the system compares webcam face embeddings to known embeddings, identifying matches within a threshold + ).
-+ Unknown faces are labeled and displayed with a red bounding box; recognized faces get a green box.
+  + Uses MTCNN from facenet-pytorch for face detection and InceptionResnetV1 for generating face embeddings.
+  + Known faces are loaded from the image directory, where each subfolder (NAME_CLASS) contains images of a person.
+  + During attendance, the system compares webcam face embeddings to known embeddings, identifying matches within a threshold + ).
+  + Unknown faces are labeled and displayed with a red bounding box; recognized faces get a green box.
 
 
 - Data Storage:
-+ Attendance records are stored in Attendance.csv with columns: Name, Class, Time, Date.
+  + Attendance records are stored in Attendance.csv with columns: Name, Class, Time, Date.
 
 
 - GUI:
-+ Built with Tkinter, featuring a menu bar, canvas for webcam feed, and tables for attendance and statistics.
-+ The webcam feed resizes dynamically to fit the canvas while maintaining aspect ratio.
+  + Built with Tkinter, featuring a menu bar, canvas for webcam feed, and tables for attendance and statistics.
+  + The webcam feed resizes dynamically to fit the canvas while maintaining aspect ratio.
 
 
 
@@ -102,17 +102,17 @@ Run the Application:
 
 - Webcam: Ensure a webcam is connected and accessible. The program will exit with an error if it cannot open the webcam.
 - Image Loading:
-+ Only .jpg, .jpeg, and .png files are supported for adding new faces.
-+ Subfolders in the image directory should be named in the format NAME_CLASS (e.g., BILL_GATE_DHCNTT).
+  + Only .jpg, .jpeg, and .png files are supported for adding new faces.
+  + Subfolders in the image directory should be named in the format NAME_CLASS (e.g., BILL_GATE_DHCNTT).
 
 
 - Error Handling:
-+ Displays error messages for issues like missing faces, invalid images, or webcam failures.
+  + Displays error messages for issues like missing faces, invalid images, or webcam failures.
 
 
 - PDF Export:
-+ Exports filtered attendance data to a PDF file with a customizable filename.
-+ Includes headers, footers, and total record count.
+  + Exports filtered attendance data to a PDF file with a customizable filename.
+  + Includes headers, footers, and total record count.
 
 
 
